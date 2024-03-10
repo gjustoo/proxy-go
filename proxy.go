@@ -33,10 +33,10 @@ func HandleRequest(w http.ResponseWriter, r *http.Request) {
 
 	// Create a copy of the client request to send it to the target server
 
-	tu := r.URL
+	tu := "https://www.google.com/"
 
 	// Copying method url and body
-	proxyReq, err := http.NewRequest(r.Method, tu.String(), r.Body)
+	proxyReq, err := http.NewRequest(r.Method, tu, r.Body)
 
 	if err != nil {
 		http.Error(w, "Error creating proxy request", http.StatusInternalServerError)
